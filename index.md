@@ -16,7 +16,7 @@ hero:
       link: /example/api-examples
     - theme: alt
       text: 算法笔记
-      link: /algorithm/first.md
+      link: /algorithm
 
 features:
   - icon: 📝

@@ -7,7 +7,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '示例', link: '/example/markdown-examples' },
-      { text: '数据结构与算法', link: '/algorithm/first' },
+      { text: '数据结构与算法', link: '/algorithm' },
     ],
 
     logo: { src: 'https://file.lishunxing.cn/img/%E6%9D%BF%E6%A0%97.svg', width: 24, height: 24 },
@@ -25,28 +25,32 @@ export default defineConfig({
       // /algothm/表示对这个文件夹下的所有md文件做侧边栏配置
       '/algorithm/': [
         {
-          text: '链表',
+          text: '递归',
           items: [
             {
-              text: '第一篇文章',
-              link: '/algorithm/first'
+              text: '爬楼梯',
+              link: '/algorithm/recursion/climbing-stairs'
             },
             {
-              text: '第二篇文章',
-              link: '/algorithm/second'
+              text: '斐波那契数',
+              link: '/algorithm/recursion/fibonacci-number'
             }
           ]
         },
         {
-          text: '栈',
+          text: '数组',
           items: [
             {
-              text: '第三篇文章',
-              link: '/algorithm/third'
+              text: '两数之和',
+              link: '/algorithm/array/two-sum'
             },
             {
-              text: '第四篇文章',
-              link: '/algorithm/fourth'
+              text: '合并两个有序数组',
+              link: '/algorithm/array/merge-sorted-array'
+            },
+            {
+              text: '移动零',
+              link: '/algorithm/array/move-zeroes'
             }
           ]
         }
