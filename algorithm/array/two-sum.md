@@ -37,7 +37,7 @@
 
 拿第二个数字与后面的所有数字相加, 还没有的话就拿第三个数字, 以此类推. 所以可以得出,  在最差的情况下, 我们需要一直拿到数组倒数第二个数字, 与最后一个数字相加, 如图所示, 假设这里target是26:
 
-<https://www.processon.com/diagraming/66da770ccba92c0d4853a873>
+![image](https://file.lishunxing.cn/img/两数之和.png)
 
 由此可以得出如下代码:
 
