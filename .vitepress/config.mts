@@ -6,7 +6,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '示例', link: '/example/markdown-examples' },
+      { text: '软件工具', link: '/example/markdown-examples' },
       { text: '数据结构与算法', link: '/algorithm' },
     ],
 
