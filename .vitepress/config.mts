@@ -6,7 +6,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '软件工具', link: '/example/markdown-examples' },
+      { text: '软件工具', link: '/software/jenkins/部署Vue项目.md'},
       { text: '数据结构与算法', link: '/algorithm' },
     ],
 
@@ -27,40 +27,25 @@ export default defineConfig({
         {
           text: '递归',
           items: [
-            {
-              text: '爬楼梯',
-              link: '/algorithm/recursion/climbing-stairs'
-            },
-            {
-              text: '斐波那契数',
-              link: '/algorithm/recursion/fibonacci-number'
-            }
+            {text: '爬楼梯',link: '/algorithm/recursion/climbing-stairs'},
+            {text: '斐波那契数',link: '/algorithm/recursion/fibonacci-number'}
           ]
         },
         {
           text: '数组',
           items: [
-            {
-              text: '两数之和',
-              link: '/algorithm/array/two-sum'
-            },
-            {
-              text: '合并两个有序数组',
-              link: '/algorithm/array/merge-sorted-array'
-            },
-            {
-              text: '移动零',
-              link: '/algorithm/array/move-zeroes'
-            }
+            {text: '两数之和',link: '/algorithm/array/two-sum'},
+            {text: '合并两个有序数组',link: '/algorithm/array/merge-sorted-array'},
+            {text: '移动零',link: '/algorithm/array/move-zeroes'}
           ]
         }
       ],
-      '/example/': [
+      '/software/': [
          {
-          text: 'Examples',
+          text: 'Jenkins',
           items: [
-            { text: 'Markdown Examples', link: '/example/markdown-examples' },
-            { text: 'Runtime API Examples', link: '/example/api-examples' }
+            { text: '安装', link: '/software/jenkins/安装' },
+            { text: '部署Vue项目', link: '/software/jenkins/部署Vue项目' }
           ]
          }
       ]
