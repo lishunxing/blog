@@ -4,23 +4,14 @@ export default defineConfig({
   title: "Lishunxing Blog",
   description: "每一个不曾起舞的日子，都是对生命的辜负",
   themeConfig: {
+    search:{provider : 'local'},
     nav: [
       { text: '首页', link: '/' },
-      { text: '软件工具', link: '/software/jenkins/部署Vue项目.md'},
+      { text: '软件工具', link: '/software'},
       { text: '数据结构与算法', link: '/algorithm' },
     ],
 
     logo: { src: 'https://file.lishunxing.cn/img/%E6%9D%BF%E6%A0%97.svg', width: 24, height: 24 },
-
-    // sidebar: [
-    //   {
-    //     text: 'Examples',
-    //     items: [
-    //       { text: 'Markdown Examples', link: '/markdown-examples' },
-    //       { text: 'Runtime API Examples', link: '/api-examples' }
-    //     ]
-    //   }
-    // ],
     sidebar : {
       // /algothm/表示对这个文件夹下的所有md文件做侧边栏配置
       '/algorithm/': [
@@ -50,12 +41,9 @@ export default defineConfig({
          }
       ]
     } ,
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/lishunxing/blog' }
     ],
-
-    
     footer: {
       message: '基于 MIT 许可发布',
       copyright: '版权所有 © 2024 lishunxing',

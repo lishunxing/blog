@@ -12,8 +12,8 @@ hero:
       text: Markdown Examples
       link: /example/markdown-examples
     - theme: alt
-      text: API Examples
-      link: /example/api-examples
+      text: 软件工具
+      link: /software
     - theme: alt
       text: 算法笔记
       link: /algorithm
