@@ -13,7 +13,24 @@ export default defineConfig({
 
     logo: { src: 'https://file.lishunxing.cn/img/%E6%9D%BF%E6%A0%97.svg', width: 24, height: 24 },
     sidebar : {
-      // /algothm/表示对这个文件夹下的所有md文件做侧边栏配置
+      '/java/': [
+        {
+          text: 'Spring',
+          items: [
+            {text: '爬楼梯',link: '/algorithm/recursion/climbing-stairs'},
+            {text: '斐波那契数',link: '/algorithm/recursion/fibonacci-number'}
+          ]
+        },
+        {
+          text: '数组',
+          items: [
+            {text: '两数之和',link: '/algorithm/array/two-sum'},
+            {text: '合并两个有序数组',link: '/algorithm/array/merge-sorted-array'},
+            {text: '移动零',link: '/algorithm/array/move-zeroes'},
+            {text: '找到所有数组中消失的数字',link: '/algorithm/array/find-all-numbers-disappeared-in-an-array'}
+          ]
+        }
+      ],
       '/algorithm/': [
         {
           text: '递归',
@@ -27,7 +44,14 @@ export default defineConfig({
           items: [
             {text: '两数之和',link: '/algorithm/array/two-sum'},
             {text: '合并两个有序数组',link: '/algorithm/array/merge-sorted-array'},
-            {text: '移动零',link: '/algorithm/array/move-zeroes'}
+            {text: '移动零',link: '/algorithm/array/move-zeroes'},
+            {text: '找到所有数组中消失的数字',link: '/algorithm/array/find-all-numbers-disappeared-in-an-array'}
+          ]
+        },
+        {
+          text: '链表',
+          items: [
+            {text: '合并两个有序链表',link: 'algorithm/linkedlist/merge-two-sorted-lists'}
           ]
         }
       ],
