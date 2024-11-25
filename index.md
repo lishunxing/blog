@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: Java
-      link: /java
+      link: /spring/简介
     - theme: alt
       text: 软件工具
       link: /software
