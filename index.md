@@ -9,8 +9,8 @@ hero:
   image : { src: 'https://vitepress.dev/vitepress-logo-large.webp', alt: 'vitepress' }
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /example/markdown-examples
+      text: Java
+      link: /java
     - theme: alt
       text: 软件工具
       link: /software
