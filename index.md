@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Lishunxing Blog"
   text: "Greatness In Simplicity"
-  tagline: 鹰豢市井, 安有凌云志
+  tagline: 
   image : { src: 'https://vitepress.dev/vitepress-logo-large.webp', alt: 'vitepress' }
   actions:
     - theme: brand
