@@ -271,31 +271,31 @@ Spring Bean 的生命周期指的是 Bean 从创建到销毁的完整过程。
 ```mermaid
 graph TB
     Start([容器启动]) --> Scan[扫描/读取 Bean 定义]
-    Scan --> BD[BeanDefinition 注册]
+    Scan --> BD["BeanDefinition 注册"]
 
-    subgraph Instance[实例化阶段]
-        Create[实例化 Bean<br/>调用构造器]
+    subgraph Instance["实例化阶段"]
+        Create["实例化 Bean<br/>调用构造器"]
     end
 
-    subgraph DI[依赖注入阶段]
-        Populate[属性填充<br/>依赖注入]
+    subgraph DI["依赖注入阶段"]
+        Populate["属性填充<br/>依赖注入"]
     end
 
-    subgraph Init[初始化阶段]
-        Aware[Aware 接口回调]
-        BPP1[BeanPostProcessor<br/>postProcessBeforeInitialization]
-        PostConstruct[@PostConstruct 方法]
-        InitMethod[InitializingBean.afterPropertiesSet<br/>或 init-method]
-        BPP2[BeanPostProcessor<br/>postProcessAfterInitialization]
+    subgraph Init["初始化阶段"]
+        Aware["Aware 接口回调"]
+        BPP1["BeanPostProcessor<br/>postProcessBeforeInitialization"]
+        PostConstruct["@PostConstruct 方法"]
+        InitMethod["InitializingBean.afterPropertiesSet<br/>或 init-method"]
+        BPP2["BeanPostProcessor<br/>postProcessAfterInitialization"]
     end
 
-    subgraph Running[运行阶段]
-        Ready[Bean 就绪<br/>可供使用]
+    subgraph Running["运行阶段"]
+        Ready["Bean 就绪<br/>可供使用"]
     end
 
-    subgraph Destroy[销毁阶段]
-        PreDestroy[@PreDestroy 方法]
-        Disposable[DisposableBean.destroy<br/>或 destroy-method]
+    subgraph Destroy["销毁阶段"]
+        PreDestroy["@PreDestroy 方法"]
+        Disposable["DisposableBean.destroy<br/>或 destroy-method"]
     end
 
     Start --> Create

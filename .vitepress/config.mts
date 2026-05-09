@@ -1,6 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
-export default defineConfig({
+
+export default withMermaid({
   title: "Lishunxing Blog",
   description: "每一个不曾起舞的日子，都是对生命的辜负",
   themeConfig: {
@@ -21,8 +23,8 @@ export default defineConfig({
             {text: '概述', link: '/java/spring/index'},
             {text: 'IoC', link: '/java/spring/IoC'},
             {text: 'AOP', link: '/java/spring/AOP'},
-            {text: '事务', link: '/java/spring/事务'},
-            {text: '循环依赖', link: '/java/spring/循环依赖'}
+            {text: '循环依赖', link: '/java/spring/循环依赖'},
+            {text: '事务', link: '/java/spring/事务'}
           ]
         },
         {
