@@ -8,6 +8,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '软件工具', link: '/software'},
+      { text: 'Java', link: '/java/spring/index' },
       { text: '数据结构与算法', link: '/algorithm' },
     ],
 
@@ -17,17 +18,17 @@ export default defineConfig({
         {
           text: 'Spring',
           items: [
-            {text: '爬楼梯',link: '/algorithm/recursion/climbing-stairs'},
-            {text: '斐波那契数',link: '/algorithm/recursion/fibonacci-number'}
+            {text: '概述', link: '/java/spring/index'},
+            {text: 'IoC', link: '/java/spring/IoC'},
+            {text: 'AOP', link: '/java/spring/AOP'},
+            {text: '事务', link: '/java/spring/事务'},
+            {text: '循环依赖', link: '/java/spring/循环依赖'}
           ]
         },
         {
-          text: '数组',
+          text: 'JUC',
           items: [
-            {text: '两数之和',link: '/algorithm/array/two-sum'},
-            {text: '合并两个有序数组',link: '/algorithm/array/merge-sorted-array'},
-            {text: '移动零',link: '/algorithm/array/move-zeroes'},
-            {text: '找到所有数组中消失的数字',link: '/algorithm/array/find-all-numbers-disappeared-in-an-array'}
+            {text: '并发编程基础', link: '/java/juc/并发编程基础'}
           ]
         }
       ],
@@ -51,7 +52,7 @@ export default defineConfig({
         {
           text: '链表',
           items: [
-            {text: '合并两个有序链表',link: 'algorithm/linkedlist/merge-two-sorted-lists'}
+            {text: '合并两个有序链表',link: '/algorithm/linkedlist/merge-two-sorted-lists'}
           ]
         }
       ],
@@ -61,6 +62,12 @@ export default defineConfig({
           items: [
             { text: '安装', link: '/software/jenkins/安装' },
             { text: '部署Vue项目', link: '/software/jenkins/部署Vue项目' }
+          ]
+         },
+         {
+          text: 'Canal',
+          items: [
+            { text: 'Canal', link: '/software/canal/Canal' }
           ]
          }
       ]
