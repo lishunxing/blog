@@ -8,8 +8,5 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
-  },
-  "dependencies": {
-    "vitepress-plugin-mermaid-pan-zoom": "^1.0.2"
   }
 }

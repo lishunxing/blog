@@ -2,9 +2,6 @@ import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 
 export default withMermaid({
-  ssr: {
-    noExternal: ['vitepress-plugin-mermaid-pan-zoom', 'svg-pan-zoom']
-  },
   title: "Lishunxing Blog",
   description: "每一个不曾起舞的日子，都是对生命的辜负",
   themeConfig: {
