@@ -1,0 +1,43 @@
+/* .vitepress/theme/custom.css */
+:root {
+    /* 文字渐变变量 */
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+
+    /* 背景光晕变量 */
+    --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+    --vp-home-hero-image-filter: blur(44px);
+}
+
+/* 确保渐变在首页生效（增强选择器优先级） */
+.VPHomeHero .name .clip {
+    background: var(--vp-home-hero-name-background) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
+}
+
+/* 确保背景光晕生效 */
+.VPHomeHero .image-bg {
+    background-image: var(--vp-home-hero-image-background-image) !important;
+    filter: var(--vp-home-hero-image-filter) !important;
+}
+
+/* 响应式调整 */
+@media (min-width: 640px) {
+    :root {
+        --vp-home-hero-image-filter: blur(56px);
+    }
+}
+
+@media (min-width: 960px) {
+    :root {
+        --vp-home-hero-image-filter: blur(68px);
+    }
+}
+
+/* 全局中文字体 */
+.VPHomeHero .text {
+    font-size: 2.5rem;
+    font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+}
