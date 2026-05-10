@@ -8,8 +8,8 @@ export default withMermaid({
     search:{provider : 'local'},
     nav: [
       { text: '首页', link: '/' },
-      { text: '软件工具', link: '/software'},
       { text: 'Java', link: '/java/spring/index' },
+      { text: '软件工具', link: '/software'},
       { text: '数据结构与算法', link: '/algorithm' },
     ],
 
@@ -27,6 +27,23 @@ export default withMermaid({
           ]
         },
         {
+          text: 'Spring Boot',
+          items: [
+            {text: '自动装配和启动流程', link: '/java/spring boot/自动装配和启动流程'}
+          ]
+        },
+        {
+          text: 'Spring Cloud',
+          items: [
+            {text: 'Gateway', link: '/java/spring cloud/Gateway'},
+            {text: 'LoadBalancer', link: '/java/spring cloud/LoadBalancer'},
+            {text: 'Nacos注册中心', link: '/java/spring cloud/Nacos注册中心'},
+            {text: 'Nacos配置中心', link: '/java/spring cloud/Nacos配置中心'},
+            {text: 'Seata', link: '/java/spring cloud/Seata'},
+            {text: 'Sentinel', link: '/java/spring cloud/Sentinel'}
+          ]
+        },
+        {
           text: 'JUC',
           items: [
             {text: '并发编程基础', link: '/java/juc/并发编程基础'},
@@ -34,6 +51,30 @@ export default withMermaid({
             {text: '线程池与阻塞队列', link: '/java/juc/线程池与阻塞队列'},
             {text: 'HashMap & ConcurrentHashMap', link: '/java/juc/HashMap & ConcurrentHashMap'},
             {text: 'ReentrantLock', link: '/java/juc/ReentrantLock'}
+          ]
+        },
+        {
+          text: 'MySQL',
+          items: [
+            {text: '架构', link: '/java/mysql/架构'},
+            {text: '索引', link: '/java/mysql/索引'},
+            {text: '事务', link: '/java/mysql/事务'}
+          ]
+        },
+        {
+          text: 'Redis',
+          items: [
+            {text: '常用数据类型', link: '/java/redis/常用数据类型'},
+            {text: '过期淘汰策略', link: '/java/redis/过期淘汰策略'},
+            {text: 'Redis持久化和集群配置', link: '/java/redis/Redis持久化和集群配置'},
+            {text: 'RedissionLock', link: '/java/redis/RedissionLock'},
+            {text: '面试题', link: '/java/redis/面试题'}
+          ]
+        },
+        {
+          text: 'MQ',
+          items: [
+            {text: 'RabbitMQ', link: '/java/mq/RabbitMQ'}
           ]
         }
       ],
@@ -85,7 +126,7 @@ export default withMermaid({
       copyright: '版权所有 © 2024 lishunxing',
     },
     outline: {
-      level: [2, 3],
+      level: [1, 2, 3],
       label: '目录'
     },
   }
