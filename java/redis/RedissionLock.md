@@ -122,7 +122,7 @@ public class PaymentService {
 }
 ```
 
-### 定时任务重复执行&#x20;
+### 定时任务重复执行 
 
 凌晨统计报表，只希望集群中有一台服务器执行
 
@@ -166,7 +166,7 @@ public class ReportJob {
 }
 ```
 
-### 分布式事务协调&#x20;
+### 分布式事务协调 
 
 跨服务的数据一致性操作 用户下单流程：扣库存 + 创建订单 + 扣余额
 
@@ -852,7 +852,7 @@ private void transferTimeoutsToBuckets() {
 }
 ```
 
-#### &#x20;执行到期任务
+####  执行到期任务
 
 ```java
 public void expireTimeouts(long deadline) {

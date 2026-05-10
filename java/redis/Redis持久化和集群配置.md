@@ -378,7 +378,7 @@ masterRedissonClient.getBucket("critical:data").get();
 
 推荐路径：/usr/local/redis/sentinel.conf。
 
-### 第二步：编辑配置文件&#x20;
+### 第二步：编辑配置文件 
 
 在 sentinel.conf 文件中，添加以下核心配置。这是最关键的一步，一定要理解每个参数的含义
 

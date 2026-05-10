@@ -227,14 +227,14 @@ public abstract class AbstractQueuedSynchronizer
                     └─────────────────────────────────┘
 ```
 
-#### &#x20;CLH队列
+####  CLH队列
 
 CLH 队列（Craig, Landin, and Hagersten queue）是一种 自旋锁（spin lock）队列算法，用于实现高性能、可扩展的 公平自旋锁，常用于多线程并发环境中，如 Java 的 java.util.concurrent.locks.AbstractQueuedSynchronizer（AQS）底层实现。
 
 CLH 是一种 基于链表的自旋锁队列，每个线程在等待锁时，会自旋地等待它的前驱节点释放锁。其核心思想是：每个线程只监视前一个线程的状态，而不是竞争共享变量。
 
-*   CLH 是 FIFO 队列，保证锁的先来先服务（公平性）。&#x20;
-*   它是 非阻塞的：线程不会休眠或挂起，而是使用自旋等待, 通过CAS操作保证并发安全。&#x20;
+*   CLH 是 FIFO 队列，保证锁的先来先服务（公平性）。 
+*   它是 非阻塞的：线程不会休眠或挂起，而是使用自旋等待, 通过CAS操作保证并发安全。 
 *   自旋发生在本地变量上，有更好的缓存局部性，适合高并发环境。
 *   虚拟双向链表：每个节点代表一个等待线程
 

@@ -140,7 +140,7 @@ return n + 1;           // 15 + 1 = 16
 
 #### 2 的幂次方的核心优势
 
-*   位运算替代取模 hash & (n-1) 替代 hash % n &#x20;
+*   位运算替代取模 hash & (n-1) 替代 hash % n  
 
     *   位运算（&）是 CPU 直接支持的指令，耗时约 1 个时钟周期
     *   取模运算（%）需要除法指令，耗时约 20-30 个时钟周期
@@ -419,8 +419,8 @@ int finalHash = hashCode ^ highBits;  // 652743 ^ 9 = 652734
     *   时间复杂度退化	O(1) → O(n)	在极端情况下低位都相同的数据会存储在一个node上
     *   Hash DoS 攻击风险	恶意构造 key 拖垮服务&#x9;
     *   内存浪费	链表/红黑树节点额外开销
-    *   &#x20;扩容开销增加	频繁 rehash&#x9;
-    *   &#x20;缓存命中率下降	数据不连续存储&#x9;
+    *    扩容开销增加	频繁 rehash&#x9;
+    *    缓存命中率下降	数据不连续存储&#x9;
 
 ### 延迟初始化（Lazy Initialization）
 
@@ -1093,7 +1093,7 @@ public class ExpiringCache<K, V> {
 }
 ```
 
-### &#x20;基于LRU实现缓存
+###  基于LRU实现缓存
 
 ```java
 import java.util.concurrent.*;

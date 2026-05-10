@@ -2,7 +2,7 @@
 
 Spring Cloud LoadBalancer 是 Spring Cloud 官方提供的**客户端负载均衡器**，用于替代已进入维护模式的 Netflix Ribbon。它在 Spring Cloud Commons 项目中提供，从 2020.0.0 版本开始成为 Spring Cloud 默认的负载均衡实现。
 
-> 官网地址: <https://docs.spring.io/spring-cloud-commons/reference/spring-cloud-commons/loadbalancer.html>   &#x20;
+> 官网地址: <https://docs.spring.io/spring-cloud-commons/reference/spring-cloud-commons/loadbalancer.html>    
 
 ## 核心概念：
 

@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "Lishunxing Blog"
-  text: "Java 技术随笔"
+  text: "果壳的技术博客"
   tagline: "Greatness In Simplicity"
   image:
     src: https://file.lishunxing.cn/img/%E6%9D%BF%E6%A0%97.svg
@@ -62,10 +62,4 @@ footer: |
     --vp-home-hero-image-filter: blur(68px);
   }
 }
-
-.VPHomeHero .text {
-  font-size: 2.5rem;
-  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
-}
-
 </style>

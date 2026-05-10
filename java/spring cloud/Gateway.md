@@ -673,7 +673,7 @@ management:
 ### 在 Nacos 创建配置
 
 *   Data ID: gateway-server.yaml（与 spring.application.name 一致）
-*   Group: DEFAULT\_GROUP&#x20;
+*   Group: DEFAULT\_GROUP 
 *   配置格式: YAML
 
 ```yaml

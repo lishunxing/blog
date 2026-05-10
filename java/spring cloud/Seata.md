@@ -574,7 +574,7 @@ Seata 会把一个 TCC 接口当成一个 `Resource`，也叫 TCC Resource。在
 *   Confirm 阶段：完成操作，比如真的把钱转给员工。
 *   Cancel 阶段：如果过程中失败了，就把预留的资源退回来。
 
-#### BonusService&#x20;
+#### BonusService 
 
 ```java
 import io.seata.rm.tcc.api.BusinessActionContext;
