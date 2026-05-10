@@ -43,11 +43,24 @@ footer: |
   <p>基于 MIT 许可发布 · 版权所有 © 2024 lishunxing</p>
 ---
 <style>
-.VPHomeHero .name {
-  background: linear-gradient(120deg, #bd34fe 30%, #41d1ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
 }
 
 .VPHomeHero .text {
@@ -55,7 +68,4 @@ footer: |
   font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
 }
 
-.VPHomeHero .tagline {
-  font-size: 1rem;
-}
 </style>
