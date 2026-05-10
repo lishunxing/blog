@@ -9,7 +9,7 @@ export default withMermaid({
     search:{provider : 'local'},
     nav: [
       { text: '首页', link: '/' },
-      { text: 'Java', link: '/java/spring/index' },
+      { text: 'Java', link: '/java/index' },
       { text: '软件工具', link: '/software'},
       { text: '数据结构与算法', link: '/algorithm' },
     ],
