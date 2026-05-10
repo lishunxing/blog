@@ -4,6 +4,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 export default withMermaid({
   title: "Lishunxing Blog",
   description: "每一个不曾起舞的日子，都是对生命的辜负",
+  ignoreDeadLinks: true,
   themeConfig: {
     search:{provider : 'local'},
     nav: [
