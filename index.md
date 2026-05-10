@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "Lishunxing Blog"
   text: "Java 技术随笔"
-  tagline: Great truths are always simple
+  tagline: "Greatness In Simplicity"
   image:
     src: https://file.lishunxing.cn/img/%E6%9D%BF%E6%A0%97.svg
     alt: Logo
