@@ -29,7 +29,11 @@ export default withMermaid({
         {
           text: 'JUC',
           items: [
-            {text: '并发编程基础', link: '/java/juc/并发编程基础'}
+            {text: '并发编程基础', link: '/java/juc/并发编程基础'},
+            {text: 'ThreadLocal', link: '/java/juc/ThreadLocal'},
+            {text: '线程池与阻塞队列', link: '/java/juc/线程池与阻塞队列'},
+            {text: 'HashMap & ConcurrentHashMap', link: '/java/juc/HashMap & ConcurrentHashMap'},
+            {text: 'ReentrantLock', link: '/java/juc/ReentrantLock'}
           ]
         }
       ],
