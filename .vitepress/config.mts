@@ -84,5 +84,9 @@ export default withMermaid({
       message: '基于 MIT 许可发布',
       copyright: '版权所有 © 2024 lishunxing',
     },
+    outline: {
+      level: [2, 3],
+      label: '目录'
+    },
   }
 })

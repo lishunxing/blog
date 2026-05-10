@@ -28,7 +28,7 @@ public class ReentrantLockDemo {
 }
 ```
 
-#### &#x20;可重入特性
+#### 可重入特性
 
 ```java
 public class ReentrantExample {
