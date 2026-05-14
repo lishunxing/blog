@@ -377,7 +377,7 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
 
 ```java
 @Component
-public class UserService {
+public class UserService implements InitializingBean {
 
     // 方式1：@PostConstruct 注解
     @PostConstruct

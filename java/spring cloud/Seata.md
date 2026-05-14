@@ -806,6 +806,107 @@ public class HRService {
 3.  参数传递限制：Seata 的 `BusinessActionContext` 只会序列化带有 `@BusinessActionContextParameter` 注解的参数。示例中 `employeeIds` 和 `amount` 都被正确注解了。
 4.  数据库事务边界：每个阶段（Try/Confirm/Cancel）都需要独立使用 `@Transactional`，因为它们是在完全不同的时间点被调用的，不能共享同一个本地事务。
 
+### 问题流程：空回滚 + 悬挂
+
+```txt
+T1: 订单服务发起 Try（扣库存）
+    ↓ （网络拥堵，请求卡在路上）
+T2: TC（Seata 服务器）等超时了，认为 Try 失败
+    ↓
+T3: TC 发送 Cancel 指令到库存服务
+    ↓
+T4: 库存服务收到 Cancel
+    → 检查发现：没有 Try 的执行记录（日志为空）
+    → 这就是【空回滚】：你让我回滚，但根本没执行过 Try
+    → 安全做法：什么都不做，只记录一下"已处理过回滚"
+    ↓
+T5: 卡住的 Try 请求终于到达库存服务
+    → 检查发现：这个 xid 对应的 Cancel 已经执行过了
+    → 这就是【悬挂】：Try 请求被"悬挂"在半空，不该执行了
+    → 安全做法：直接拒绝这个 Try
+```
+
+
+
+### useTCCFence 防悬挂/空回滚
+
+利用 Seata 1.5.1+ 的 `useTCCFence = true` 自动解决空回滚和悬挂问题。
+
+#### 项目依赖（确保版本支持 Fence）
+
+```xml
+<!-- seata-spring-boot-starter 1.5.2+ -->
+<dependency>
+    <groupId>com.alibaba.cloud</groupId>
+    <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+    <version>2022.0.0.0</version>
+</dependency>
+```
+
+**重要**：Fence 机制需要数据库表 `tcc_fence_log`，Seata 会自动创建，无需手动建表。
+
+#### TCC 接口定义
+
+```java
+// StockTccAction.java
+@LocalTCC
+public interface StockTccAction {
+    
+    @TwoPhaseBusinessAction(
+        name = "deductStock",           // 资源名
+        commitMethod = "commit",         // 提交方法
+        rollbackMethod = "cancel",       // 回滚方法
+        useTCCFence = true               // 🔥 关键：开启 Fence 防悬挂/空回滚
+    )
+    boolean prepare(
+        BusinessActionContext context,
+        @BusinessActionContextParameter(paramName = "productId") String productId,
+        @BusinessActionContextParameter(paramName = "count") Integer count
+    );
+    
+    boolean commit(BusinessActionContext context);
+    boolean cancel(BusinessActionContext context);
+}
+```
+
+#### Fence 机制如何自动解决问题
+
+##### 1. 防悬挂（Cancel 比 Try 先到）
+
+```text
+时间线：
+T1: Cancel 先到达
+    → 检查 tcc_fence_log，无记录
+    → 插入一条 status = 3 (SUSPENDED) 的记录
+    → Cancel 返回成功（空回滚）
+
+T2: Try 后到达
+    → 检查 status，发现是 3 (SUSPENDED)
+    → 知道已被悬挂，拒绝执行
+```
+
+##### 2. 防空回滚（Try 未执行却收到 Cancel）
+
+```text
+执行路径：
+T1: Cancel 先到
+    → 插入 SUSPENDED 记录
+    → 直接返回成功
+
+T2: Try 到
+    → 发现已悬挂，丢弃执行
+```
+
+##### 3. 幂等性（重复 Confirm/Cancel）
+
+```text
+执行路径：
+T1: Confirm 执行成功 → 更新 status = 1
+T2: TC 收不到响应重试 Confirm
+    → 检查 status = 1
+    → 不再执行业务，直接返回成功
+```
+
 # RocketMQ 事务消息方案与代码实现
 
 RocketMQ 事务消息是解决分布式事务最终一致性的重要方案。与 Seata AT 模式不同，它基于消息中间件实现，通过两阶段提交 + 事务回查机制，保证本地事务与消息发送的原子性。
