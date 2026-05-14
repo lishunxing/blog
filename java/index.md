@@ -60,6 +60,13 @@ Java 并发编程核心包，涵盖线程、锁、集合等。
 - [RedissionLock](./redis/RedissionLock) - 分布式锁实现
 - [面试题](./redis/面试题) - Redis 高频面试题
 
+### JVM
+
+Java 虚拟机，运行 Java 字节码的运行时环境。
+
+- [JVM 架构](./jvm/jvm架构) - 内存模型、类加载机制
+- [JVM 调优](./jvm/jvm调优) - GC调优与性能分析
+
 ### MQ 消息队列
 
 异步通信与解耦的核心组件。

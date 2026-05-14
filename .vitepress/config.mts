@@ -73,6 +73,13 @@ export default withMermaid({
           ]
         },
         {
+          text: 'JVM',
+          items: [
+            {text: 'JVM架构', link: '/java/jvm/jvm架构'},
+            {text: 'JVM调优', link: '/java/jvm/jvm调优'}
+          ]
+        },
+        {
           text: 'MQ',
           items: [
             {text: 'RabbitMQ', link: '/java/mq/RabbitMQ'}
